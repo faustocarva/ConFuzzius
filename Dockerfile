@@ -1,7 +1,5 @@
 FROM ubuntu:18.04
 
-MAINTAINER Christof Torres (christof.torres@uni.lu)
-
 SHELL ["/bin/bash", "-c"]
 RUN apt-get update
 RUN apt-get install -y sudo wget tar unzip pandoc python-setuptools python-pip python-dev python-virtualenv git build-essential software-properties-common python3-pip
@@ -16,4 +14,9 @@ RUN pip3 install cython
 RUN pip3 install cytoolz
 COPY fuzzer fuzzer
 RUN cd fuzzer && pip3 install -r requirements.txt
-COPY examples examples
+RUN apt-get update && apt-get install -y jq && rm -rf /var/lib/apt/lists/*
+COPY dataset dataset
+COPY run.sh run.sh
+COPY parse.sh parse.sh
+COPY batch.sh batch.sh
+

@@ -93,7 +93,9 @@ class ExecutionTraceAnalyzer(OnTheFlyAnalysis):
             "total_transactions": self.env.nr_of_transactions,
             "unique_transactions": len(self.env.unique_individuals),
             "code_coverage": code_coverage_percentage,
-            "branch_coverage": branch_coverage_percentage
+            "code_coverage_value": len(self.env.code_coverage),
+            "branch_coverage": branch_coverage_percentage,
+            "branch_coverage_value": branch_coverage,            
         })
 
         if len(self.env.code_coverage) == self.env.previous_code_coverage_length:
