@@ -79,11 +79,7 @@ def compile(solc_version, evm_version, source_code_file):
             'language': 'Solidity',
             'sources': {source_code_file: {'content': source_code}},
             'settings': {
-                "optimizer": {
-                    "enabled": True,
-                    "runs": 200
-                },
-                "evmVersion": evm_version,
+                #"evmVersion": evm_version,
                 "outputSelection": {
                     source_code_file: {
                         "*":
