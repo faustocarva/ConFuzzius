@@ -67,7 +67,7 @@ def run_command(cmd):
 def compile(solc_version, evm_version, source_code_file):
     out = None
     source_code = ""
-    with open(source_code_file, 'r') as file:
+    with open(source_code_file, 'r', encoding="utf-8") as file:
         source_code = file.read()
     try:
         if not str(solc_version).startswith("v"):

@@ -10,7 +10,7 @@ class Source:
         self.line_break_positions = self._load_line_break_positions()
 
     def _load_content(self):
-        with open(self.filename, 'r') as f:
+        with open(self.filename, 'r',encoding="utf-8") as f:
             content = f.read()
         return content
 
